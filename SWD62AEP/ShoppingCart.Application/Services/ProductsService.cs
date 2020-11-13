@@ -8,10 +8,10 @@ using ShoppingCart.Domain.Interfaces;
 
 namespace ShoppingCart.Application.Services
 {
-    public class ProductsServices : IProductsService
+    public class ProductsService : IProductsService
     {
         private IProductsRepository _productRepo;
-        public ProductsServices(IProductsRepository productRepo)
+        public ProductsService(IProductsRepository productRepo)
         {
             _productRepo = productRepo;
         }
