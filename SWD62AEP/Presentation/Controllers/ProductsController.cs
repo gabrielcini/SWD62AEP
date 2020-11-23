@@ -19,5 +19,12 @@ namespace Presentation.Controllers
             var list = _productsService.GetProducts();
             return View(list);
         }
+
+        public IActionResult Details(Guid id)
+        {
+            var myProduct = _productsService.GetProduct(id);
+
+            return View(myProduct);
+        }
     }
 }
