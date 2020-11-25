@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.Application.Interfaces;
+using ShoppingCart.Application.ViewModels;
 
 namespace Presentation.Controllers
 {
@@ -25,6 +26,32 @@ namespace Presentation.Controllers
             var myProduct = _productsService.GetProduct(id);
 
             return View(myProduct);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public IActionResult Create(ProductViewModel data)
+        {
+            try
+            {
+                _productsService.AddProduct(data);
+
+                ViewData["feedback"] = "Product was added successfully";
+                ModelState.Clear();
+            }
+            catch(Exception ex)
+            {
+                ViewData["warning"] = "Product was not added. Check your details";
+            }
+
+            return View();
         }
     }
 }
