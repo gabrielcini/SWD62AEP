@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ShoppingCart.Application.Interfaces;
 using ShoppingCart.Application.ViewModels;
+using ShoppingCart.Domain.Interfaces;
 
 namespace ShoppingCart.Application.Services
 {

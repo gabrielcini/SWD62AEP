@@ -15,6 +15,7 @@
                     <h5 class="card-title">@product.Name</h5>
                     <p class="card-text">€@product.Price</p>
                     <a href="/Products/Details?id=@product.Id" class="btn btn-primary">View Specifications</a>
+                    <a href="/Products/Details?id=@product.Id" onclick="return window.confirm('are you sure?')" class="btn btn-primary">Delete</a>
                 </div>
             </div>
         }

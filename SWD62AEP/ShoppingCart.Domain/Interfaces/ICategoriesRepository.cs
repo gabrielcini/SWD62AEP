@@ -6,12 +6,8 @@ using System.Linq;
 
 namespace ShoppingCart.Domain.Interfaces
 {
-    public interface ICategoriesRespository
+    public interface ICategoriesRepository
     {
         IQueryable<Category> GetCategories();
-
-        Category GetCategory(Guid id);
-        void AddCategory(Category c);
-        void DeleteCategory(Guid id);
     }
 }
